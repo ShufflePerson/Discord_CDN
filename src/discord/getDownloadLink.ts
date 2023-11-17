@@ -16,17 +16,20 @@ export default (async (channel_id: string, message_id: string, file_name: string
     }
 
     const message = data[0] as any;
-    if (message.attachments.length < 0) {
-	console.error(`The given message ( ${channel_id}/${message_id} ) has no files attached.`);
-	return "";
+    const files = message.attachments;
+    let found_link = "";
+
+    for (let msg of data) {
+	if (msg.attachments.length > 0) {
+	    for (let file of msg.attachments) {
+		if (file.id == message_id && file.filename == file_name)
+		    found_link = file.url;
+	    }
+	}
     }
 
-    const files = message.attachments;
-
-    let found_link = "";
-    for (let file of files) {
-	if (file.filename == file_name)
-	    found_link = file.url;
+    if (!found_link) {
+	console.log("Failed to find the download link.", files, data);
     }
 
     return found_link;

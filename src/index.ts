@@ -13,6 +13,11 @@ import IDownloadLinkData from "./types/IDownloadLinkData";
 function parseDownloadLink(link: string): IDownloadLinkData {
     const parts = link.split("/");
 
+    if (parts[6]) {
+	if (parts[6].includes("?"))
+	    parts[6] = parts[6].split("?")[0];
+    }
+
     return {
 	channel_id: parts[4] || "",
 	message_id: parts[5] || "",
@@ -22,7 +27,10 @@ function parseDownloadLink(link: string): IDownloadLinkData {
 
 async function getFullLink(link: string) {
     const data = (parseDownloadLink(link));
-    if (!data.channel_id || !data.file_name || !data.message_id) return "";
+    if (!data.channel_id || !data.file_name || !data.message_id) {
+	console.log("Missing one of the values: ", data);
+	return "";
+    }
     return await Discord.getDownloadLink(data.channel_id, data.message_id, data.file_name);
 }
 
