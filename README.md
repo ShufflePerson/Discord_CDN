@@ -2,7 +2,7 @@
 
 **Discord CDN** Allows you to bypass the expiry on download links. 
 
-This is achived by using a Discord Account Token to get the link.
+This must be hosted by yourself, with a token that has access to the files.
 
 You must have have a token of an account that can see the file's message.
 
