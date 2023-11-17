@@ -9,7 +9,8 @@
     "sourceMap": true,
     "forceConsistentCasingInFileNames": true,
     "outDir": "dist",
-    "declaration": true
+    "declaration": true,
+    "esModuleInterop": true 
   },
   "include": [
     "src/**/*.ts"
