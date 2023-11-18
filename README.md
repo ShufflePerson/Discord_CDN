@@ -12,9 +12,11 @@ Once setup, you will be able to go to `http://YOUR_SERVER_IP/DISCORD_DOWNLOAD_LI
 
 It is fully safe to share the endpoint with your friends and anyone else. Your token is NOT exposed anywhere.
 
+![Graph](assets/ss.png "How it works")
+
 ## How setup
 
-## Prerequisites for Node.js
+## Prerequisites 
 
 ### 1. Node.js Installation
    - Install Node.js from [official website](https://nodejs.org/).
