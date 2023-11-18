@@ -69,3 +69,7 @@ http://127.0.0.1/https://cdn.discordapp.com/attachments/1165690279932735643/1175
 3. Go to the Console Tab and paste in the following command
 4. `console.log((webpackChunkdiscord_app.push([[''],{},e=>{m=[];for(let c in e.c)m.push(e.c[c])}]),m).find(m=>m?.exports?.default?.getToken!==void 0).exports.default.getToken());`
 5. Copy the output and set it in the `.env` file. (e.g `TOKEN=PASTE_TOKEN_HERE`)
+
+## Contact
+
+My Discord is: `_.shuffle._`
