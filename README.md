@@ -1,10 +1,10 @@
-# Discord CDN
+<p align="center">
+ <img width="100px" src="https://www.svgrepo.com/show/353655/discord-icon.svg" align="center" alt="Discord" />
+ <h2 align="center">Discord CDN</h2>
+ <p align="center">Keep using Discord as your CDN host, bypassing the expiry on download links!</p>
+</p>
 
-**Discord CDN** Allows you to bypass the expiry on download links. 
-
-This must be hosted by yourself, with a token that has access to the files.
-
-You must have have a token of an account that can see the file's message.
+#  
 
 ## What it looks like
 
