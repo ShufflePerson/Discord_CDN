@@ -46,6 +46,7 @@ npm run setup
 ```
 TOKEN=NTU2NjQ0NTI1MTgzMTk4MTA0.SWGjq3.cAINvMoMWOeeG36MBddlhhwrcCD
 PORT=80
+CACHE_TIME=3600
 ```
 
 #### Run the server
