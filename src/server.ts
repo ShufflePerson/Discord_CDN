@@ -13,7 +13,7 @@ app.get('/:url(*)', async (req, res) => {
   if (fullLink) {
     res.redirect(fullLink); 
   } else {
-    res.status(404).send('Failed to get the download link.');
+    res.status(502).send('Failed to get the download link.');
   }
 });
 

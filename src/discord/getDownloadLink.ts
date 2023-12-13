@@ -2,7 +2,7 @@ import axios from "axios";
 
 
 let LINK_CACHE: any = {};
-const CACHE_TIME: number = process.env.CACHE_TIME as any || 3600; 
+const CACHE_TIME: number = process.env.CACHE_TIME as any || 800; 
 function getLinkHash(channel_id: string, message_id: string, file_name: string): string {
     return `${channel_id}${message_id}${file_name}`;
 }
