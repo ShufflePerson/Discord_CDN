@@ -11,17 +11,18 @@ import IDownloadLinkData from "./types/IDownloadLinkData";
 
 
 function parseDownloadLink(link: string): IDownloadLinkData {
-    const parts = link.split("/");
-
-    if (parts[6]) {
-	if (parts[6].includes("?"))
-	    parts[6] = parts[6].split("?")[0];
+    if (link.includes("?")) {
+	link = link.split("?")[0];
     }
 
+    const parts = link.split("/");
+
+    console.log(parts);
+
     return {
-	channel_id: parts[4] || "",
-	message_id: parts[5] || "",
-	file_name: parts[6] || "" 
+	channel_id: parts[3] || "",
+	message_id: parts[4] || "",
+	file_name: parts[5] || "" 
     };
 }
 
