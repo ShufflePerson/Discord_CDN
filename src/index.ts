@@ -16,13 +16,14 @@ function parseDownloadLink(link: string): IDownloadLinkData {
     }
 
     const parts = link.split("/");
-
-    console.log(parts);
+    let offset = 0;
+    if (parts[6])
+	offset++;
 
     return {
-	channel_id: parts[3] || "",
-	message_id: parts[4] || "",
-	file_name: parts[5] || "" 
+	channel_id: parts	[3 	 + offset] || "",
+	message_id: parts	[4  	 + offset] || "",
+	file_name: parts	[5   	 + offset] || "" 
     };
 }
 
