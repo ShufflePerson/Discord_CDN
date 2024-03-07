@@ -4,7 +4,10 @@
  <p align="center">Keep using Discord as your CDN host, bypassing the expiry on download links!</p>
 </p>
 
-#  
+# NEW UPDATE
+**Discord_CDN** can now fetch **ALL** files, even the ones you don't have access to. 
+
+*This means, **DISCORD_CDN** can restore and let you download any old links.*
 
 ## What it looks like
 
