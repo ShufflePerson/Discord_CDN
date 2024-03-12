@@ -10,7 +10,7 @@ When a request is done to the server, the server will fetch the latest non-expir
 
 This means that you are able to download expired links directly from Discord, keeping it fast and very low cost to host the server. 
 
-## .env 
+## Environment file ( **.env** )
 
 Fill the values in the `.env.example` and rename `.env.example` to simply `.env`
 
