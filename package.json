@@ -93,10 +93,10 @@
   "scripts": {
     "start": "tsc && node ./dist/server.js",
     "build": "tsc",
-    "dev": "ts-node src/index.ts",
-    "setup": "npm install && tsc"
+    "dev": "ts-node src/dev.ts",
+    "setup": "npm install"
   },
   "keywords": [],
-  "author": "",
+  "author": "ShufflePerson",
   "license": "ISC"
 }

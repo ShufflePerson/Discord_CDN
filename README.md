@@ -1,81 +1,97 @@
 <p align="center">
  <img width="100px" src="https://www.svgrepo.com/show/353655/discord-icon.svg" align="center" alt="Discord" />
- <h2 align="center">Discord CDN</h2>
- <p align="center">Keep using Discord as your CDN host, bypassing the expiry on download links!</p>
+ <h2 align="center">Discord CDN <strong>V2</strong></h2>
+ <p align="center">Updates any old/expired Discord download links.</p>
 </p>
-
-# NEW UPDATE
-**Discord_CDN** can now fetch **ALL** files, even the ones you don't have access to. 
-
-*This means, **DISCORD_CDN** can restore and let you download any old links.*
-
-## What it looks like
-
-Once setup, you will be able to go to `http://YOUR_SERVER_IP/DISCORD_DOWNLOAD_LINK` and it will redirect you to the latest link for that file.
-
-It is fully safe to share the endpoint with your friends and anyone else. Your token is NOT exposed anywhere.
 
 ![Graph](assets/ss.png "How it works")
 
-## How setup
+# Usage
 
-## Prerequisites 
+There are two ways to use the HTTP server
 
-### 1. Node.js Installation
-   - Install Node.js from [official website](https://nodejs.org/).
-   - Verify installation using `node -v` and `npm -v`.
+## Way 1
 
-
-### 2. Version Control (Optional but recommended)
-   - Install Git for version control.
-
-
-#### Clone the repo
+Simply paste the Discord URL at the end of your server URL
 
 ```
-git clone https://github.com/ShufflePerson/discord_cdn.git
+http://localhost//https://cdn.discordapp.com/attachments/763509665585561610/1216965708911480923/image.png
 ```
 
-Or download the source as a zip file and extract it.
+## Way 2
 
-#### Run setup
+Replace the `cdn.discord.app.com` with your URL. Make sure to change `HTTPS` to `HTTP` unless you have configured `HTTPS` through something like CloudFlare.
 
 ```
+http://localhost/attachments/763509665585561610/1216965708911480923/image.png
+```
+
+## Using as Library
+
+If you wish to use **Discord CDN** as a library, check the code example below.
+
+You may also check `src/server.ts` to see how the HTTP server uses it.
+
+```typescript
+import { Discord, getConfig } from "PATH_TO_DISCORD_CDN"
+
+//getConfig will parse the config from .env
+//if you wish to pass your own config object, check the `src/Types/IConfig.ts` interface
+
+async function dev() {
+    try {
+        let config = await getConfig();
+        let discord = new Discord(config);
+        let link = await discord.fetchLatestLink("https://cdn.discordapp.com/attachments/763509665585561610/1216965708911480923/image.png?ex=")
+        console.log(link);
+    } catch (ex) {
+        console.error(ex);
+    }
+}
+
+dev();
+```
+
+# Installation and Setup
+
+## Download the repo
+
+```bash
+git clone https://github.com/ShufflePerson/Discord_CDN.git
+cd Discord_CDN
+```
+
+### OR
+
+Download the repo as a zip and extract it to a folder.
+
+## Setup Environment file ( **.env** )
+
+Fill the values in the `.env.example` and rename `.env.example` to simply `.env`
+
+- `TOKEN`
+   - A Discord Account Token, used for fetching the link
+- `FALLBACK`
+   - If Discord removes the endpoint for fetching a non-expired link, fallback to the **V1** lookup.
+- `PORT`
+   - Specifies what port the HTTP server will be running on.
+
+
+## Install packages
+
+```bash
 npm run setup
 ```
 
-#### Create a .env file and fill the values
+## Start the server
 
-```
-TOKEN=NTU2NjQ0NTI1MTgzMTk4MTA0.SWGjq3.cAINvMoMWOeeG36MBddlhhwrcCD
-PORT=80
-CACHE_TIME=3600
-```
+This will also recompile the code. 
 
-#### Run the server
-
-```
+```bash
 npm run start
 ```
 
-## How to use
 
-Simply paste the download url to the end of your server.
+# Contact
 
-It is fully safe to share the server's IP, your token is not exposed anywhere.
-
-```
-http://127.0.0.1/https://cdn.discordapp.com/attachments/1165690279932735643/1175070504986611762/untitled.mp3
-```
-
-## How to get your token
-
-1. Open Discord on your Browser. 
-2. Open the Dev Tools ( Inspect Element )
-3. Go to the Console Tab and paste in the following command
-4. `console.log((webpackChunkdiscord_app.push([[''],{},e=>{m=[];for(let c in e.c)m.push(e.c[c])}]),m).find(m=>m?.exports?.default?.getToken!==void 0).exports.default.getToken());`
-5. Copy the output and set it in the `.env` file. (e.g `TOKEN=PASTE_TOKEN_HERE`)
-
-## Contact
-
-My Discord is: `_.shuffle._`
+You may contact me on my Discord: `_.shuffle._`
