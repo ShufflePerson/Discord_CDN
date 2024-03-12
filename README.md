@@ -76,14 +76,30 @@ Fill the values in the `.env.example` and rename `.env.example` to simply `.env`
 - `PORT`
    - Specifies what port the HTTP server will be running on.
 
+## Yarn
 
-## Install packages
+### Install packages
+
+```
+yarn install
+```
+
+### Start the server
+
+```
+yarn pnpify tsc
+yarn node ./dist/server.js
+```
+
+## NPM
+
+### Install packages
 
 ```bash
 npm run setup
 ```
 
-## Start the server
+### Start the server
 
 This will also recompile the code. 
 
