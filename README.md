@@ -15,7 +15,7 @@ There are two ways to use the HTTP server
 Simply paste the Discord URL at the end of your server URL
 
 ```
-http://localhost//https://cdn.discordapp.com/attachments/763509665585561610/1216965708911480923/image.png
+http://localhost/https://cdn.discordapp.com/attachments/763509665585561610/1216965708911480923/image.png
 ```
 
 ## Way 2
