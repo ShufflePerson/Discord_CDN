@@ -22,10 +22,11 @@ function staticVerifyToken(token: string): ETokenIssue {
 
 
 /**
- * Returns a Promise<boolean> whether the given token is valid or not. 
- * TODO: Implemend a non static check
+ * Ensures the given Token is a valid Discord Token.
  * @param token Discord Token
- * @param performStatic If set, token will be checked statically without any requests to Discord. 
+ * @param performStatic ( Optional, default True ) If set, token will be checked statically without any requests to Discord. 
+ * @returns a Promise<boolean> whether the given token is valid or not. 
+ * @todo Implemend the non static check
  */
 async function VerifyToken(token: string, performStatic: boolean = true): Promise<boolean> {
     let isValidToken: boolean = true;
