@@ -97,6 +97,6 @@
     "setup": "npm install && tsc"
   },
   "keywords": [],
-  "author": "",
+  "author": "ShufflePerson",
   "license": "ISC"
 }
