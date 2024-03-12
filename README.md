@@ -26,7 +26,7 @@ Replace the `cdn.discord.app.com` with your URL. Make sure to change `HTTPS` to 
 http://localhost/attachments/763509665585561610/1216965708911480923/image.png
 ```
 
-## Using as Library
+## Using as a Library
 
 If you wish to use **Discord CDN** as a library, check the code example below.
 
