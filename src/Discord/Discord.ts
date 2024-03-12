@@ -18,6 +18,8 @@ class Discord {
      * @todo Fallback to V1 lookup if the HTTP request fails.
      */
     public async fetchLatestLink(oldLink: string): Promise<string> {
+        if (!oldLink.includes("https://")) 
+            oldLink = `https://cdn.discordapp.com/${oldLink}`;
         const linkData = ParseLink(oldLink);
         if (linkData.error != ELinkIssue.NONE) {
             throw new Error(linkData.error);
