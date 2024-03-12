@@ -4,7 +4,11 @@ import VerifyToken from "./Discord/Utils/VerifyToken";
 dotenv.config();
 
 
+let cachedConfig: IConfig | null = null;
+
 async function getConfig(): Promise<IConfig> {
+    if (cachedConfig != null) return cachedConfig;
+
     //Required
     const { TOKEN, FALLBACK, PORT } = process.env;
 
@@ -42,13 +46,15 @@ async function getConfig(): Promise<IConfig> {
     }
 
 
-    return {
+    cachedConfig = {
         TOKEN,
         FALLBACK: FALLBACK.toUpperCase() == "YES",
         PORT: Number(PORT),
 
         bypassTokenChecks: bypassTokenChecks.toUpperCase() == "YES"
     }
+
+    return cachedConfig;
 }
 
 export default getConfig;
