@@ -26,6 +26,7 @@ function staticVerifyToken(token: string): ETokenIssue {
  * @param token Discord Token
  * @param performStatic ( Optional, default True ) If set, token will be checked statically without any requests to Discord. 
  * @returns a Promise<boolean> whether the given token is valid or not. 
+ * @throws If trying to pass `performStatic` as false. Read the Todo.
  * @todo Implemend the non static check
  */
 async function VerifyToken(token: string, performStatic: boolean = true): Promise<boolean> {
