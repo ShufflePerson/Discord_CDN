@@ -4,8 +4,9 @@ function hasNonUTF8Characters(str: string): boolean {
 
 
 /**
- * Returns a `boolean` whetever the given string is a valid UTF-8 string when decoded from Base64
+ * Performs multiple checks on the input string
  * @param input The Base64 String to Check
+ * @returns A `boolean` whetever the given string is a valid UTF-8 string when decoded from Base64
  */
 function GetUTF8Base64(input: string): string | null {
     try {
