@@ -1,7 +1,7 @@
 <p align="center">
  <img width="100px" src="https://www.svgrepo.com/show/353655/discord-icon.svg" align="center" alt="Discord" />
  <h2 align="center">Discord CDN</h2>
- <p align="center">Discord CDN provides a easy to use proxy which can be used to download expired files from Discord. </p>
+ <p align="center">Updates any old/expired Discord download links.</p>
 </p>
 
 ## How it works
