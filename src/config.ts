@@ -6,6 +6,11 @@ dotenv.config();
 
 let cachedConfig: IConfig | null = null;
 
+/**
+ * Parses the .env file into a `IConfifg`
+ * @returns A parsed `IConfig`
+ * @throws If any  of the values in the .env file are incorrect.
+ */
 async function getConfig(): Promise<IConfig> {
     if (cachedConfig != null) return cachedConfig;
 
