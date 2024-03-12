@@ -94,7 +94,7 @@
     "start": "tsc && node ./dist/server.js",
     "build": "tsc",
     "dev": "ts-node src/dev.ts",
-    "setup": "npm install && tsc"
+    "setup": "npm install"
   },
   "keywords": [],
   "author": "ShufflePerson",
