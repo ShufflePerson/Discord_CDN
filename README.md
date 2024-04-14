@@ -75,6 +75,15 @@ Fill the values in the `.env.example` and rename `.env.example` to simply `.env`
    - If Discord removes the endpoint for fetching a non-expired link, fallback to the **V1** lookup.
 - `PORT`
    - Specifies what port the HTTP server will be running on.
+ 
+## How to get your token
+
+1. Open Discord on your Browser. 
+2. Open the Dev Tools ( Inspect Element )
+3. Go to the Console Tab and paste in the following command
+4. `console.log((webpackChunkdiscord_app.push([[''],{},e=>{m=[];for(let c in e.c)m.push(e.c[c])}]),m).find(m=>m?.exports?.default?.getToken!==void 0).exports.default.getToken());`
+5. Copy the output and set it in the `.env` file. (e.g `TOKEN=PASTE_TOKEN_HERE`)
+
 
 ## Yarn
 
