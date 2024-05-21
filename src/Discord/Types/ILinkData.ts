@@ -1,6 +1,6 @@
 interface ILinkData {
-    channelID: number,
-    fileID: number,
+    channelID: bigint,
+    fileID: bigint,
     fileName: string
 }
 
