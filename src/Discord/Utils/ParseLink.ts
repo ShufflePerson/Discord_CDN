@@ -30,11 +30,13 @@ function ParseLink(input: string): IParsedLink {
     if (!fileName.includes("."))
         return { error: ELinkIssue.FILENAME_NO_DOT };
 
+    console.log(channelID);
+
     return {
         error: ELinkIssue.NONE,
         data: {
-            channelID: channelID,
-            fileID: fileID,
+            channelID: BigInt(channelID),
+            fileID: BigInt(fileID),
             fileName
         }
     }
